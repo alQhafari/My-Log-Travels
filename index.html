@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <!-- jQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @media (max-width: 1024px) {
+        .forthSection {
+          height: 80vh;
+        }
+        #forthSection2 {
+          height: 60vh;
+        }
+      }
+    </style>
+    <title>My Log Travels</title>
+  </head>
+  <body
+    class="bg-cover bg-no-repeat"
+    style="background-image: url('./src/Background.png'); font-family: 'Cardo', serif"
+  >
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <section>
+      <nav
+        style="font-family: 'Lato', sans-serif"
+        class="bg-transparent px-8 md:py-3 fixed w-screen transition ease-linear duration-300 z-50"
+        id="navbar"
+      >
+        <button
+          id="navbarBtn"
+          type="button"
+          class="inline-flex items-center my-2 md:hidden justify-center p-2 border-gray-400 hover:border-white border-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          onclick="navbarBtn()"
+        >
+          <span class="sr-only">Open main menu</span>
+          <!--
+              Icon when menu is closed.
+  
+              Heroicon name: outline/menu
+  
+              Menu open: "hidden", Menu closed: "block"
+            -->
+          <svg
+            class="block h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+          <!--
+              Icon when menu is open.
+  
+              Heroicon name: outline/x
+  
+              Menu open: "block", Menu closed: "hidden"
+            -->
+          <svg
+            class="hidden h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <ul
+          id="navbarList"
+          class="hidden md:flex md:flex-row flex-col md:justify-between transition all duration-300"
+        >
+          <div
+            class="flex flex-col md:flex-row items-center space-y-2 md:space-x-14 md:space-y-0"
+          >
+            <li
+              class="navbarList md:px-8 p-2 md:py-1 w-full md:text-black rounded-full text-white hover:bg-slate-700 hover:text-white transition ease-in duration-200"
+            >
+              <a href="">Home</a>
+            </li>
+            <li
+              class="navbarList md:px-8 p-2 md:py-1 w-full md:text-black rounded-full text-white hover:bg-slate-700 hover:text-white transition ease-in duration-200"
+            >
+              <a href="">Guides</a>
+            </li>
+            <li
+              class="navbarList md:px-8 p-2 md:py-1 w-full md:text-black rounded-full text-white hover:bg-slate-700 hover:text-white transition ease-in duration-200"
+            >
+              <a href="">Flights</a>
+            </li>
+            <li
+              class="navbarList md:px-8 p-2 md:py-1 w-full md:text-black rounded-full text-white hover:bg-slate-700 hover:text-white transition ease-in duration-200"
+            >
+              <a href="">About</a>
+            </li>
+          </div>
+
+          <button
+            class="navbarList px-3 py-1 my-3 md:text-black md:border-black rounded-full text-white border-2 hover:bg-white hover:text-black border-white"
+          >
+            Contact Us
+          </button>
+        </ul>
+      </nav>
+      <div
+        class="container max-w-full h-screen pt-32 md:pt-48 md:pb-36 flex flex-row mx-auto px-8"
+      >
+        <div class="whenopen left lg:basis-5/12">
+          <h1 class="text-6xl text-center lg:text-left lg:text-7xl font-bold">
+            Travel to<br />your dream<br />destination
+          </h1>
+          <p class="mt-3 lg:mt-5 text-lg lg:text-left text-center">
+            pulvinar elementum integer enim neque volutpat ac tincidunt vitae
+            semper quis lectus nulla at volutpat diam ut venenatis tellus in
+            metus vulputate eu scelerisque felis imperdiet proin fermentum leo
+          </p>
+          <div class="mt-16 lg:mt-5 lg:text-left text-center">
+            <a
+              class="px-14 py-3 rounded hover:bg-transparent border-2 border-transparent hover:border-black hover:text-black hover:border-2 mt-8 bg-black text-white transition ease-in-out duration-300"
+              href=""
+              >Reserve Ticket</a
+            >
+          </div>
+        </div>
+        <div
+          class="whenopen right basis-7/12 bg-center bg-no-repeat bg-cover hidden lg:block"
+          style="background-image: url('./src/Landing-bg.png')"
+        ></div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="reveal w-full text-white text-center h-3/6 bg-cover bg-no-repeat bg-center pt-8 pb-10"
+        style="background-image: url('./src/bg-secSection.png')"
+      >
+        <h2 class="font-bold text-3xl md:text-5xl mt-5">
+          Create a memory<br />to remember
+        </h2>
+        <p class="mt-5 lg:px-96">
+          Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do ei
+          usmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+          sus pendisse ultrices gravida.
+        </p>
+        <button
+          class="font-bold rounded border-white border-2 px-5 py-2 mt-5 hover:bg-white hover:text-black transition ease-in-out duration-300"
+        >
+          My Travel Logs
+        </button>
+      </div>
+    </section>
+
+    <section
+      class="bg-cover bg-no-repeat bg-center"
+      style="background-image: url('./src/bg-thirdSection.png')"
+    >
+      <div
+        class="reveal grid w-full grid-cols-1 gap-4 lg:grid-cols-3 bg-cover bg-center mt-44 px-10 lg:px-28"
+      >
+        <a href="#" class="group">
+          <div
+            class="aspect-w-1 w-full mx-auto aspect-h-1 bg-gray-200 overflow-hidden xl:aspect-w-7 xl:aspect-h-8"
+          >
+            <img
+              src="./src/img1.png"
+              alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
+              class="w-full h-full object-center object-cover scale-125 group-hover:scale-100 transition ease-in-out duration-300"
+            />
+          </div>
+          <hr class="w-3/12 h-2 bg-black rounded mt-5" />
+          <h3 class="mt-4 text-3xl font-extrabold text-black">
+            Lorem ipsum <br />
+            dolor sit amet
+          </h3>
+          <p class="mt-1 text-md font-medium text-gray-900">
+            Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do ei
+            usmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+            sus pendisse ultrices gravida.
+          </p>
+        </a>
+        <a href="#" class="group">
+          <div
+            class="w-full aspect-w-1 mx-auto aspect-h-1 bg-gray-200 overflow-hidden xl:aspect-w-7 xl:aspect-h-8"
+          >
+            <img
+              src="./src/img2.png"
+              alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
+              class="w-full h-full object-center object-cover scale-125 group-hover:scale-100 transition ease-in duration-300"
+            />
+          </div>
+          <hr class="w-3/12 h-2 bg-black rounded mt-5" />
+          <h3 class="mt-4 text-3xl font-extrabold text-black">
+            Lorem ipsum <br />
+            dolor sit amet
+          </h3>
+          <p class="mt-1 text-lg font-medium text-gray-900">
+            Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do ei
+            usmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+            sus pendisse ultrices gravida.
+          </p>
+        </a>
+        <a href="#" class="group">
+          <div
+            class="w-full aspect-w-1 mx-auto aspect-h-1 bg-gray-200 overflow-hidden xl:aspect-w-7 xl:aspect-h-8"
+          >
+            <img
+              src="./src/img3.png"
+              alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
+              class="w-full h-full object-center object-cover scale-125 group-hover:scale-100 transition ease-in duration-300"
+            />
+          </div>
+          <hr class="w-3/12 h-2 bg-black rounded mt-5" />
+          <h3 class="mt-4 text-3xl font-extrabold text-black">
+            Lorem ipsum <br />
+            dolor sit amet
+          </h3>
+          <p class="mt-1 text-lg font-medium text-gray-900">
+            Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do ei
+            usmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+            sus pendisse ultrices gravida.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <section
+      class="bg-no-repeat bg-contain lg:bg-auto bg-top lg:bg-left-bottom"
+      style="background-image: url(./src/bg-forthSection.png)"
+    >
+      <div class="reveal text-center mt-64 px-10 lg:px-28">
+        <img class="mx-auto" src="./src/Airplace Icon.png" alt="" />
+        <h2 class="font-bold text-3xl lg:text-7xl mt-10">
+          See places you've<br />
+          <span class="underline decoration-2 underline-offset-4 italic"
+            >never</span
+          >
+          been before
+        </h2>
+        <p class="mt-5 mb-10">
+          Lorem Ipsum Dolor | Lorem Ipsum Dolor | Lorem Ipsum Dolor
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="px-10 mt-64 lg:h-full lg:px-72 md:px-60 grid gap-4 grid-cols-1 lg:grid-cols-2"
+      >
+        <div
+          class="reveal forthSection relative bg-cover bg-no-repeat bg-center"
+          style="background-image: url('/src/img4.png')"
+        >
+          <img class="absolute -left-8 top-24" src="/Tape.png" alt="" />
+        </div>
+        <div
+          id="forthSection2"
+          class="reveal imgRight grid grid-rows-1 lg:grid-rows-2"
+        >
+          <div
+            class="bg-cover bg-no-repeat lg:w-4/5 h-full"
+            style="background-image: url('./src/img5.png')"
+          ></div>
+          <div class="grid gap-4 lg:gap-4 grid-cols-1 lg:grid-cols-3 mt-10">
+            <h3
+              class="font-extrabold text-2xl underline decoration-2 underline-offset-4 col-span-1"
+            >
+              Lorem ipsum dolor sit amet consectetur adipiscing elit sed do ei
+            </h3>
+            <p class="col-span-2 font-thin">
+              Lorem ipsum dolor sit amet, consectetur adip isicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud.<br />
+              <br />exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur.
+              <span>
+                <img src="./src/image.png" alt="" />
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="bg-black lg:h-screen text-white grid grid-cols-1 gap-4 lg:grid-cols-2 px-10 py-10 lg:px-0 lg:pl-28 lg:py-32 mt-24"
+      >
+        <div class="reveal forthSection -mt-56 lg:mt-0">
+          <h2 class="font-bold text-3xl lg:text-5xl">
+            Choose anywhere<br />
+            you'd like to be
+          </h2>
+          <h5
+            style="font-family: 'Lato', sans-serif"
+            class="font-bold text-2xl mt-20"
+          >
+            Lorem Ipsum dolor
+          </h5>
+          <p style="font-family: 'Lato', sans-serif">
+            Lorem ipsum dolor sit amet, cosectetur adipisicing elit, sed do ei
+            usmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in repre
+            henderit in voluptate velit esse.
+          </p>
+          <h5
+            style="font-family: 'Lato', sans-serif"
+            class="font-bold text-2xl mt-20"
+          >
+            Lorem Ipsum dolor
+          </h5>
+          <p style="font-family: 'Lato', sans-serif">
+            Lorem ipsum dolor sit amet, cosectetur adipisicing elit, sed do ei
+            usmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in repre
+            henderit in voluptate velit esse.
+          </p>
+        </div>
+        <div class="reveal imgRight forthSection lg:order-last order-first">
+          <img src="./src/bg-fifthSection.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="reveal w-full h-screen lg:h-full px-5 lg:px-28 mt-36 lg:mt-24 grid grid-cols-1 lg:grid-cols-3"
+      >
+        <div class="col-span-2">
+          <h2 class="font-bold text-7xl">
+            Lorem ipsum dolor<br />
+            sit amet consectetur
+          </h2>
+          <table class="table-auto mt-5 w-full border-spacing-3 lg:w-5/6">
+            <tbody>
+              <tr class="border-t-2 border-black">
+                <td>
+                  Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed
+                  do ei usmod
+                </td>
+                <td>
+                  <button>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 4C11.4477 4 11 4.44772 11 5V11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H11V19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19V13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11H13V5C13 4.44772 12.5523 4 12 4Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr class="border-t-2 border-black">
+                <td>
+                  Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed
+                  do ei usmod
+                </td>
+                <td>
+                  <button>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 4C11.4477 4 11 4.44772 11 5V11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H11V19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19V13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11H13V5C13 4.44772 12.5523 4 12 4Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr class="border-y-2 border-black">
+                <td>
+                  Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed
+                  do ei usmod
+                </td>
+                <td>
+                  <button>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 4C11.4477 4 11 4.44772 11 5V11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H11V19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19V13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11H13V5C13 4.44772 12.5523 4 12 4Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-span-1 hidden lg:block">
+          <img src="./src/bg-sixthSection.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="reveal w-full h-full bg-cover bg-no-repeat lg:pt-60 pt-56 pb-36 lg:px-28"
+        style="background-image: url('./src/bg-seventSection.png')"
+      >
+        <h2 class="font-bold text-3xl lg:text-6xl text-center">
+          Here's what they<br />
+          have to say...
+        </h2>
+        <div
+          style="font-family: 'Lato', sans-serif"
+          class="swiper text-center w-full lg:w-3/4 mt-10 p-10"
+        >
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div
+              class="swiper-slide border-2 border-black rounded-lg drop-shadow-md"
+            >
+              <div class="flex justify-center w-full h-full">
+                <div class="block p-6 max-w-sm">
+                  <img
+                    class="rounded-full"
+                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+                    alt=""
+                  />
+                  <h5
+                    style="font-family: lato"
+                    class="text-gray-900 text-xl leading-tight font-bold mb-2"
+                  >
+                    Customer Name
+                  </h5>
+                  <p class="text-gray-700 text-base mb-4">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide border-2 border-black rounded-lg drop-shadow-lg"
+            >
+              <div class="flex justify-center w-full h-full">
+                <div class="block p-6 max-w-sm">
+                  <img
+                    class="rounded-full"
+                    src="https://images.unsplash.com/photo-1627541718143-1adc1b582e62?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+                    alt=""
+                  />
+                  <h5
+                    style="font-family: lato"
+                    class="text-gray-900 text-xl leading-tight font-bold mb-2"
+                  >
+                    Customer Name
+                  </h5>
+                  <p class="text-gray-700 text-base mb-4">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-slide border-2 border-black rounded-lg drop-shadow-lg"
+            >
+              <div class="flex justify-center w-full h-full">
+                <div class="block p-6 max-w-sm">
+                  <img
+                    class="rounded-full"
+                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+                    alt=""
+                  />
+                  <h5
+                    style="font-family: lato"
+                    class="text-gray-900 text-xl leading-tight font-bold mb-2"
+                  >
+                    Customer Name
+                  </h5>
+                  <p class="text-gray-700 text-base mb-4">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- If we need pagination -->
+          <div class="swiper-pagination text-black"></div>
+
+          <!-- If we need navigation buttons -->
+          <div
+            class="swiper-button-prev p-8 rounded-full bg-black text-white hover:bg-gray-500"
+          ></div>
+          <div
+            class="swiper-button-next p-8 rounded-full bg-black text-white hover:bg-gray-500"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="w-full h-screen lg:h-full px-10 py-8 lg:px-28 lg:mt-36 lg:mt-24 grid gap-7 grid-cols-1 lg:grid-cols-5"
+      >
+        <div class="reveal secLeft col-span-2 flex flex-col w-full">
+          <h2 class="font-bold text-5xl lg:text-6xl">Be updated!</h2>
+          <form
+            style="font-family: 'Lato', sans-serif"
+            class="flex flex-col lg:w-9/12 mt-24"
+            action=""
+          >
+            <input
+              class="required:border-red-500 p-3 mb-6 border-2 border-black rounded-lg placeholder:text-gray-500 placeholder:font-bold"
+              type="text"
+              name=""
+              id=""
+              placeholder="First Name*"
+            />
+            <input
+              class="required:border-red-500 p-3 mb-6 border-2 border-black rounded-lg placeholder:text-gray-500 placeholder:font-bold"
+              type="text"
+              name=""
+              id=""
+              placeholder="Last Name*"
+            />
+            <input
+              class="required:border-red-500 p-3 mb-6 border-2 border-black rounded-lg placeholder:text-gray-500 placeholder:font-bold"
+              type="email"
+              name=""
+              id=""
+              placeholder="Email Subject*"
+            />
+            <textarea
+              class="required:border-red-500 p-3 mb-10 h-44 border-2 border-black rounded-lg placeholder:text-gray-500 placeholder:font-bold"
+              name=""
+              id=""
+              placeholder="Write something here..."
+            ></textarea>
+            <button
+              class="bg-black text-white p-3 border-2 border-transparent rounded-lg hover:bg-white hover:border-2 hover:border-black hover:text-black transition ease-in duration-300"
+              type="submit"
+            >
+              Submit Email
+            </button>
+          </form>
+        </div>
+        <div
+          class="reveal secRight right col-span-3 bg-cover bg-no-repeat hidden lg:block"
+          style="background-image: url('./src/bg-eightSection.png')"
+        ></div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="bg-cover bg-no-repeat bg-center px-14 py-7 lg:px-28 lg:py-16"
+        style="background-image: url('./src/bg-footer.png')"
+      >
+        <div class="grid grid-cols-1 text-center lg:text-left lg:grid-cols-6 gap-4">
+          <div class="lg:col-span-2">
+            <h1 class="font-bold text-3xl lg:text-6xl">My Log Travels</h1>
+          </div>
+          <div class="lg:col-span-4">
+            <h5 class="font-extrabold text-xl hidden lg:block">Quick Links</h5>
+            <div class="grid grid-cols-1 gap-2 lg:gap-4 lg:grid-cols-4 mt-5">
+              <p class="">Home</p>
+              <p>Travels</p>
+              <p>Recommendations</p>
+              <p>Mission Statement</p>
+              <p>About Us</p>
+              <p>Promo Flights</p>
+              <p>Guides</p>
+              <p>The Teams</p>
+              <p>My Travel Logs</p>
+              <p>Travel Routes</p>
+              <p>Blogs</p>
+              <p>Contact Us</p>
+            </div>
+          </div>
+        </div>
+        <p class="text-center mt-14">2021 - 2022 My Log Travels. All Rights Reserved.</p>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.active{
+    position: relative;
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.whenopen.left{
+    position: relative;
+    transform: translateX(-150px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+.whenopen.right{
+    position: relative;
+    transform: translateX(150px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+.whenopen.left.active{
+    position: relative;
+    transform: translateX(0px);
+    opacity: 1;
+}
+.whenopen.right.active{
+    position: relative;
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.reveal.forthSection{
+    position: relative;
+    transform: translateX(-150px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+.reveal.forthSection.active{
+    position: relative;
+    transform: translateX(0px);
+    opacity: 1
+}
+.reveal.imgRight.forthSection{
+    position: relative;
+    transform: translateX(-3000px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+.reveal.imgRight.forthSection.active{
+    position: relative;
+    transform: translateX(0px);
+    opacity: 1
+}
+.reveal.secLeft{
+    position: relative;
+    transform: translateX(-150px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+.reveal.secLeft.active{
+    position: relative;
+    transform: translateX(0px);
+    opacity: 1
+}
+.reveal.secRight{
+    position: relative;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+.reveal.secRight.active{
+    position: relative;
+    transform: translateX(0px);
+    opacity: 1
+}
